@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco del Desbienestar</title>
+    <meta name="description" content="Simulación de un cajero automático en el Banco del Desbienestar que permite consultar saldo, ingresar y retirar dinero.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Banco del Desbienestar</h1>
+
+        <!-- Login Section -->
+        <div id="login-section">
+            <label for="account-select">Selecciona una cuenta:</label>
+            <select id="account-select" aria-label="Selecciona una cuenta">
+                <option value="" disabled selected>Selecciona una cuenta</option>
+            </select>
+
+            <label for="password-input">Contraseña:</label>
+            <input type="password" id="password-input" placeholder="Ingresa tu contraseña" aria-label="Contraseña">
+            <button id="login-btn" aria-label="Ingresar a la cuenta">Ingresar</button>
+            <p id="login-error" class="error" aria-live="polite"></p>
+        </div>
+        
+        <!-- Menu Section -->
+        <div id="menu-section" style="display:none;">
+            <h2>Bienvenido, <span id="account-name"></span></h2>
+            <button id="check-balance-btn"><i class="fas fa-money-check-alt"></i> Consultar Saldo</button>
+            <button id="deposit-btn"><i class="fas fa-hand-holding-usd"></i> Ingresar Monto</button>
+            <button id="withdraw-btn"><i class="fas fa-wallet"></i> Retirar Monto</button>
+            <button id="history-btn"><i class="fas fa-history"></i> Ver Historial</button>
+            <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Salir</button>
+            <p id="menu-error" class="error" aria-live="polite"></p>
+        </div>
+
+        <!-- Action Section -->
+        <div id="action-section" style="display:none;">
+            <h3 id="action-title"></h3>
+            <label for="amount-input">Monto:</label>
+            <input type="number" id="amount-input" placeholder="Ingresa el monto" aria-label="Monto">
+            <button id="confirm-btn" aria-label="Confirmar transacción">Confirmar</button>
+            <p id="action-error" class="error" aria-live="polite"></p>
+        </div>
+        
+        <!-- Result Section -->
+        <div id="result-section" style="display:none;">
+            <p id="result-message"></p>
+            <button id="back-btn"><i class="fas fa-arrow-left"></i> Regresar al Menú</button>
+        </div>
+
+        <!-- Loader Section -->
+        <div class="loader" id="loader"></div>
+
+        <!-- History Section -->
+        <div id="history-section" style="display:none;">
+            <h3>Historial de Transacciones</h3>
+            <ul id="transaction-history"></ul>
+            <button id="back-history-btn"><i class="fas fa-arrow-left"></i> Regresar al Menú</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

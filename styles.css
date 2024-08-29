@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #006341; /* Verde Oscuro */
+    --primary-hover: #004d32; /* Verde Oscuro Hover */
+    --error-color: #AD2031;   /* Rojo Oscuro */
+    --error-hover: #8C1A28;   /* Rojo Oscuro Hover */
+    --background-color: #FFFFFF; /* Blanco */
+    --text-color: #006341; /* Verde Oscuro */
+    --accent-color: #8C6915; /* Oro */
+    --accent-hover: #705411; /* Oro Hover */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    width: 350px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+}
+
+h1 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h2, h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:focus, select:focus, input:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+.error {
+    color: var(--error-color);
+    margin-top: 10px;
+}
+
+.loader {
+    border: 8px solid var(--background-color);
+    border-radius: 50%;
+    border-top: 8px solid var(--primary-color);
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: var(--background-color);
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    text-align: left;
+    color: var(--text-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+#back-btn, #back-history-btn, #back-action-btn {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#back-btn:hover, #back-history-btn:hover, #back-action-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+#logout-btn {
+    background-color: var(--error-color);
+    color: var(--background-color);
+}
+
+#logout-btn:hover {
+    background-color: var(--error-hover);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2, h3 {
+        font-size: 1.4em;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    input, select {
+        padding: 10px;
+    }
+
+    .loader {
+        width: 40px;
+        height: 40px;
+        border-width: 7px;
+    }
+}
